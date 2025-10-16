@@ -22,7 +22,7 @@ def list_of_items(p_items):
     'a pen, a student handbook'
 
     >>> list_of_items([g_item_identity_card])
-    'id card'
+    'identity card'
 
     >>> list_of_items([])
     ''
@@ -68,7 +68,7 @@ def print_inventory_items(p_items):
     print "You have ..." instead of "There is ... here.". For example:
 
     >>> print_inventory_items(g_inventory)
-    You have id card, laptop, money.
+    You have identity card, laptop, money.
     <BLANKLINE>
 
     """
@@ -251,10 +251,6 @@ def execute_take(p_item_id):
     "You cannot take that."
     """
     l_found_item = None
-    #     if p_item_id in g_current_room["items"]["id"]:
-    #         g_current_room["items"].remove(p_item_id)
-    #     for p_item_id in g_current_room["items"]["id"]:
-    #         if
     for l_item in g_current_room["items"]:
         if l_item["id"] == p_item_id:
             l_found_item = l_item
@@ -275,9 +271,9 @@ def execute_drop(p_item_id):
         if l_item["id"] == p_item_id:
             l_found_item = l_item
             g_inventory.remove(l_found_item)
-            print('Inventory:', g_inventory)
+            # print('Inventory:', g_inventory)
             g_current_room["items"].append(l_found_item)
-            print('Current room items:', g_current_room["items"])
+            # print('Current room items:', g_current_room["items"])
             break
     if l_found_item is None:
         print("You cannot drop that.")
